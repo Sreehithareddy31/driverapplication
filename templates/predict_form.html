@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Application Status Prediction</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f0f0; /* Optional: background color */
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 600px; /* Set a max-width for better responsiveness */
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            box-sizing: border-box; /* Ensures padding is included in the width */
+        }
+
+        input[type="text"], input[type="date"], select, input[type="submit"] {
+            padding: 10px;
+            margin: 5px 0;
+            width: 100%;
+            max-width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box; /* Ensures padding is included in the width */
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Driver Application Status Predictor</h1>
+        <form action="/predict" method="post">
+            <label for="drug_test">Drug Test:</label>
+            <select id="drug_test" name="drug_test">
+                <option value="Complete">Complete</option>
+                <option value="Needed">Needed</option>
+            </select><br>
+
+            <label for="type">Type:</label>
+            <select id="type" name="type">
+                <option value="HDR">HDR</option>
+                <option value="Not Needed">Not Needed</option>
+            </select><br>
+
+            <label for="App_Date">App Date:</label>
+            <input type="date" id="App_Date" name="App_Date"><br>
+        
+            <label for="fru_interview">FRU Interview Scheduled:</label>
+            <select id="fru_interview" name="fru_interview">
+                <option value="Applicable">Applicable</option>
+                <option value="Not Applicable">Not Applicable</option>
+            </select><br>
+
+            <label for="wav_course">WAV Course:</label>
+            <select id="wav_course" name="wav_course">
+                <option value="Complete">Complete</option>
+                <option value="Needed">Needed</option>
+            </select><br>
+
+            <label for="defensive_driving">Defensive Driving:</label>
+            <select id="defensive_driving" name="defensive_driving">
+                <option value="Complete">Complete</option>
+                <option value="Needed">Needed</option>
+            </select><br>
+
+            <label for="driver_exam">Driver Exam:</label>
+            <select id="driver_exam" name="driver_exam">
+                <option value="Complete">Complete</option>
+                <option value="Needed">Needed</option>
+            </select><br>
+
+            <label for="medical_clearance">Medical Clearance Form:</label>
+            <select id="medical_clearance" name="medical_clearance">
+                <option value="Complete">Complete</option>
+                <option value="Needed">Needed</option>
+            </select><br>
+
+            <label for="other_requests">Other Requests:</label>
+            <select id="other_requests" name="other_requests">
+                <option value="Finger Prints">Finger Prints</option>
+                <option value="Not Needed">Not Needed</option>
+            </select><br>
+
+            <label for="last_updated">Last Updated:</label>
+            <input type="date" id="last_updated" name="last_updated"><br>
+
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Application Status</title>
+    <style>
+        body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* Navigation bar styles */
+.navbar {
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 10px 20px;
+    position: fixed; /* Fixed position for the navbar */
+    top: 0;
+    width: 100%;
+    z-index: 1; /* Keep navbar on top */
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Content sections styling */
+.section {
+    padding: 60px;
+    text-align: center;
+    /* Default background color for other sections */
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly transparent black */
+    margin-top: 60px; /* Add margin to avoid overlap with the navbar */
+}
+
+/* Style for the predict button */
+.predict-button {
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 4px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.predict-button:hover {
+    background-color: #45a049;
+}
+
+/* Specific styles for Home section */
+#home {
+    position: relative; /* To stack content over background image */
+    height: 100vh; /* Full viewport height */
+    background-image: url("{{ url_for('static', filename='driver.jpg') }}");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white; /* Ensure text is white for contrast */
+}
+
+#home h1, #home p {
+    position: relative;
+    z-index: 1; /* Ensure content is above the background image */
+}
+
+/* Ensure text is readable */
+.section h1, .section h2, .section p {
+    color: white; /* Ensure text is white for contrast */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow for better readability */
+}
+
+.about-section {
+    background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent black background */
+    padding: 20px;
+    margin: 20px 0; /* Margin between subsections */
+    border-radius: 8px; /* Rounded corners */
+}
+
+ 
+
+    </style>
+</head>
+<body>
+    <div class="bg-image"></div>
+
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#predict">Predict Now</a>
+    </div>
+
+    <div id="home" class="section">
+        <h1>Welcome to Driver Application Status Checker</h1>
+        <p>Your one-stop solution to check the status of your application.</p>
+    </div>
+
+    <div id="about" class="section">
+        <h2>About Us</h2>
+        <div class="about-section">
+            <h3>Our Mission</h3>
+            <p>We aim to provide an efficient platform for checking the status of driver applications.</p>
+        </div>
+        <div class="about-section">
+            <h3>Our Vision</h3>
+            <p>To streamline the driver application process and make it accessible to everyone.</p>
+        </div>
+        <div class="about-section">
+            <h3>Our Team</h3>
+            <p>Our team consists of dedicated professionals committed to improving the application process.</p>
+        </div>
+    </div>
+
+    <div id="contact" class="section">
+        <h2>Contact Us</h2>
+        <p>Email: contact@driverstatus.com</p>
+        <p>Phone: +123 456 7890</p>
+    </div>
+
+    <div id="predict" class="section">
+        <h2>Predict Application Status</h2>
+        <p>Click the button below to predict the status of your application.</p>
+        <a href="{{ url_for('predict_form') }}" class="predict-button">Predict Now</a>
+    </div>
+
+</body>
+</html>
+
